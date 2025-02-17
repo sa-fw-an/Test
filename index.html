@@ -2,12 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link href="/src/styles.css" rel="stylesheet">
+    <base href="/Test/">
+    <link id="dynamic" rel="icon" type="image/svg+xml" href="favicons/favicon1.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SugarLabs</title>
-    <script type="module" crossorigin src="/Test/assets/index-i0z0fNcT.js"></script>
-    <link rel="stylesheet" crossorigin href="/Test/assets/index-Dh14XnUL.css">
+    <script>
+      (function () {
+        "use strict";
+        function setRandomFavicon() {
+          const favicons = [
+            'favicons/favicon1.svg',
+            'favicons/favicon2.svg',
+            'favicons/favicon3.svg',
+            'favicons/favicon4.svg',
+            'favicons/favicon5.svg',
+            'favicons/favicon6.svg',
+            'favicons/favicon7.svg'
+          ];
+          const randomIndex = Math.floor(Math.random() * favicons.length);
+          const randomFavicon = favicons[randomIndex];
+          const faviconLink = document.getElementById('dynamic');
+          if (faviconLink) {
+            faviconLink.href = randomFavicon;
+          }
+        }
+        document.addEventListener('DOMContentLoaded', setRandomFavicon);
+      })();
+    </script>
+    <script type="module" crossorigin src="/Test/assets/index-8pdJU3AZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/Test/assets/index-CRAHmNS8.css">
   </head>
   <body>
     <div id="root"></div>
