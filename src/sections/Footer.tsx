@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import GithubIcon from '../assets/social/github.svg';
 import {
   socialLinks,
@@ -8,8 +8,6 @@ import {
 } from '../constants/Footer';
 
 const Footer = () => {
-  const location = useLocation();
-  const basePath = location.pathname.includes('/Test') ? '/Test' : '';
 
   return (
     <>
@@ -31,7 +29,7 @@ const Footer = () => {
                 {resourceLinks.map((link) => (
                   <li key={link.to}>
                     <Link
-                      to={`${basePath}${link.to}`}
+                      to={`${link.to}`}
                       className="hover:text-white transition-all duration-300 flex items-center group"
                     >
                       <span className="w-0 group-hover:w-2 h-2 bg-blue-500 rounded-full mr-0 group-hover:mr-2 transition-all duration-300"></span>
@@ -63,7 +61,7 @@ const Footer = () => {
                       </a>
                     ) : (
                       <Link
-                        to={`${basePath}${link.to}`}
+                        to={`${link.to}`}
                         className="hover:text-white transition-all duration-300 flex items-center group"
                       >
                         <span className="w-0 group-hover:w-2 h-2 bg-purple-500 rounded-full mr-0 group-hover:mr-2 transition-all duration-300"></span>
@@ -154,7 +152,7 @@ const Footer = () => {
             {quickLinks.map((link) => (
               <Link
                 key={link.to}
-                to={`${basePath}${link.to}`}
+                to={`${link.to}`}
                 className="hover:text-white transition-all duration-300 text-sm"
               >
                 {link.text}
