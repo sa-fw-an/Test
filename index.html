@@ -6,29 +6,7 @@
     <link href="./src/styles/globals.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SugarLabs</title>
-    <script>
-      (function () {
-        "use strict";
-        function setRandomFavicon() {
-          const favicons = [
-            'favicons/favicon1.svg',
-            'favicons/favicon2.svg',
-            'favicons/favicon3.svg',
-            'favicons/favicon4.svg',
-            'favicons/favicon5.svg',
-            'favicons/favicon6.svg',
-            'favicons/favicon7.svg'
-          ];
-          const randomIndex = Math.floor(Math.random() * favicons.length);
-          const randomFavicon = favicons[randomIndex];
-          const faviconLink = document.getElementById('dynamic');
-          if (faviconLink) {
-            faviconLink.href = randomFavicon;
-          }
-        }
-        document.addEventListener('DOMContentLoaded', setRandomFavicon);
-      })();
-    </script>
+    <script src="randomfavicon.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="root"></div>
