@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import AboutUs from './pages/About/AboutUs';
 import Mission from './pages/About/Mission';
@@ -15,9 +15,7 @@ import Volunteer from './pages/Volunteer';
 import Donate from './pages/Donate';
 import Products from './pages/Products';
 
-const BASE_PATH = '/Test';
-
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     { path: `/`, element: <MainPage /> },
     { path: `/about-us`, element: <AboutUs /> },
@@ -36,7 +34,7 @@ const router = createBrowserRouter(
     { path: `/products`, element: <Products /> },
   ],
   {
-    basename: BASE_PATH, // Set the basename to match the repository name
+    basename: '/', // No need to set basename with HashRouter
   },
 );
 
