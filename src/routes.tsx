@@ -33,9 +33,6 @@ const router = createHashRouter(
     { path: `/donate`, element: <Donate /> },
     { path: `/products`, element: <Products /> },
   ],
-  {
-    basename: '/', // No need to set basename with HashRouter
-  },
 );
 
 export default router;
