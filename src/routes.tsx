@@ -15,24 +15,22 @@ import Volunteer from './pages/Volunteer';
 import Donate from './pages/Donate';
 import Products from './pages/Products';
 
-const router = createHashRouter(
-  [
-    { path: `/`, element: <MainPage /> },
-    { path: `/about-us`, element: <AboutUs /> },
-    { path: `/mission`, element: <Mission /> },
-    { path: `/leadership`, element: <Leadership /> },
-    { path: `/contact-us`, element: <ContactUs /> },
-    { path: `/faqs`, element: <FAQs /> },
-    { path: `/community-news`, element: <CommunityNews /> },
-    { path: `/events`, element: <Events /> },
-    { path: `/press-release`, element: <PressRelease /> },
-    { path: `/sugar-stories`, element: <SugarStories /> },
-    { path: `/try-sugar`, element: <TrySugar /> },
-    { path: `/join-development`, element: <JoinDevelopment /> },
-    { path: `/volunteer`, element: <Volunteer /> },
-    { path: `/donate`, element: <Donate /> },
-    { path: `/products`, element: <Products /> },
-  ],
-);
+const router = createHashRouter([
+  { path: `/`, element: <MainPage /> },
+  { path: `/about-us`, element: <AboutUs /> },
+  { path: `/mission`, element: <Mission /> },
+  { path: `/leadership`, element: <Leadership /> },
+  { path: `/contact-us`, element: <ContactUs /> },
+  { path: `/faqs`, element: <FAQs /> },
+  { path: `/community-news`, element: <CommunityNews /> },
+  { path: `/events`, element: <Events /> },
+  { path: `/press-release`, element: <PressRelease /> },
+  { path: `/sugar-stories`, element: <SugarStories /> },
+  { path: `/try-sugar`, element: <TrySugar /> },
+  { path: `/join-development`, element: <JoinDevelopment /> },
+  { path: `/volunteer`, element: <Volunteer /> },
+  { path: `/donate`, element: <Donate /> },
+  { path: `/products`, element: <Products /> },
+]);
 
 export default router;

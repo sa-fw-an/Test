@@ -8,7 +8,6 @@ import {
 } from '../constants/Footer';
 
 const Footer = () => {
-
   return (
     <>
       <div className="h-20"></div>

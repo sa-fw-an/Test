@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { dropdowns } from '../constants/Header';
 import logo from '../assets/logo.svg';
@@ -8,7 +8,6 @@ const Header: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 20);
