@@ -10,7 +10,7 @@
             'favicon7.svg'
         ];
         const randomIndex = Math.floor(Math.random() * favicons.length);
-        const randomFavicon = 'favicons/'+favicons[randomIndex];
+        const randomFavicon = 'favicons/' + favicons[randomIndex];
         const faviconLink = document.getElementById('dynamic');
         if (faviconLink) {
             faviconLink.href = randomFavicon;
