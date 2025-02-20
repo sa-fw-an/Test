@@ -51,8 +51,8 @@ const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="flex-shrink-0 flex items-center"
               onClick={closeMenu}
             >
@@ -73,7 +73,9 @@ const Header: React.FC = () => {
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <span
                   className={`block w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
-                    menuOpen ? 'rotate-45 translate-y-1.5' : 'translate-y-[-4px]'
+                    menuOpen
+                      ? 'rotate-45 translate-y-1.5'
+                      : 'translate-y-[-4px]'
                   }`}
                 />
                 <span
@@ -83,7 +85,9 @@ const Header: React.FC = () => {
                 />
                 <span
                   className={`block w-6 h-0.5 bg-gray-600 transition-all duration-300 mt-1 ${
-                    menuOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-[4px]'
+                    menuOpen
+                      ? '-rotate-45 -translate-y-1.5'
+                      : 'translate-y-[4px]'
                   }`}
                 />
               </div>
@@ -207,63 +211,65 @@ const Header: React.FC = () => {
                   <div className="h-20" />
                   <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-6">
                     <div className="space-y-6">
-                      {Object.entries(dropdowns).map(([key, { label, items }]) => (
-                        <div key={key} className="space-y-2">
-                          <button
-                            onClick={() =>
-                              setActiveDropdown(
-                                activeDropdown === key ? null : key,
-                              )
-                            }
-                            className="flex items-center justify-between w-full text-left px-2 py-2
+                      {Object.entries(dropdowns).map(
+                        ([key, { label, items }]) => (
+                          <div key={key} className="space-y-2">
+                            <button
+                              onClick={() =>
+                                setActiveDropdown(
+                                  activeDropdown === key ? null : key,
+                                )
+                              }
+                              className="flex items-center justify-between w-full text-left px-2 py-2
                                     text-gray-700 font-medium rounded-lg hover:bg-gray-50"
-                            aria-expanded={activeDropdown === key}
-                          >
-                            <span>{label}</span>
-                            <svg
-                              className={`w-5 h-5 transition-transform duration-200 ${
-                                activeDropdown === key ? 'rotate-180' : ''
-                              }`}
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
+                              aria-expanded={activeDropdown === key}
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          </button>
-
-                          <AnimatePresence>
-                            {activeDropdown === key && (
-                              <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="overflow-hidden"
+                              <span>{label}</span>
+                              <svg
+                                className={`w-5 h-5 transition-transform duration-200 ${
+                                  activeDropdown === key ? 'rotate-180' : ''
+                                }`}
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
                               >
-                                <div className="pl-4 space-y-2">
-                                  {items.map((item) => (
-                                    <Link
-                                      key={item.path}
-                                      to={item.path}
-                                      onClick={closeMenu}
-                                      className="flex items-center px-4 py-2 text-sm text-gray-600
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
+                              </svg>
+                            </button>
+
+                            <AnimatePresence>
+                              {activeDropdown === key && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: 'auto', opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="pl-4 space-y-2">
+                                    {items.map((item) => (
+                                      <Link
+                                        key={item.path}
+                                        to={item.path}
+                                        onClick={closeMenu}
+                                        className="flex items-center px-4 py-2 text-sm text-gray-600
                                               rounded-lg hover:bg-gray-50 hover:text-blue-600"
-                                    >
-                                      {item.label}
-                                    </Link>
-                                  ))}
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </div>
-                      ))}
+                                      >
+                                        {item.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ),
+                      )}
 
                       {[
                         'Products',
@@ -298,9 +304,9 @@ const Header: React.FC = () => {
               )}
             </AnimatePresence>
           </div>
-          </div>
+        </div>
       </div>
-      <div className="h-10" /> 
+      <div className="h-10" />
     </>
   );
 };
